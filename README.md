@@ -1,50 +1,26 @@
-# React + TypeScript + Vite
+## Objective:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Build an interface that allows users to search for movies using the OMDB API and nominate their favorite films. Once a user selected five movies, a notification would inform them that they had reached the nomination limit.
 
-Currently, two official plugins are available:
+### Key Requirements:
+- Search Functionality: Implement a search feature that queries the OMDB API and returns a list of movies displaying at least the title and release year.
+- Nomination Capability: Enable users to nominate movies from the search results. Once nominated, the corresponding button should be disabled to prevent duplicate nominations.
+- Nomination List: Display a separate section where users can view their nominated movies. This list should allow users to remove nominations if desired.
+- Notification Banner: Show a banner or message when a user has nominated five movies, indicating that they have reached the nomination limit.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Solution
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+#### User Stories:
+- As a user I should be able to search for films to nominate (Search bar)
+- Users must be able to see at least a title, year of release and a nominate button (Api return Movie tile, image, Year or Release, button)
+- As a user I expect that the list of results will change as I update my search term ( action.type searchTerm)
+- As a user I should be able to nominate a film which will appear in a nomination list (action.type addMovie)
+- As a user I should be able to un-nominate a film or remove a nomination. (action.type removeMovie)
+- As a user I should be able to see a list of the films I have nominated.
+- As a user I should not be able to nominate the same film twice
+- As a user I should be able to nominate a film if it is a remake or reboot and has a different year of release but the same title as a prior release
+- Users should have the ability to share a link with others that shows what films they have nominated
+- Users nominations should be remembered when they return to the page
+- As a user I should see a banner when I nominate 5 films
+- As a user I should not see a banner if I have nominated 5 films and remove one
+ 
