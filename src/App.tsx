@@ -19,11 +19,11 @@ function App() {
 
   return (
     <main className="w-full">
-      <div className="max-w-6xl mx-auto flex flex-col items-center justify-center space-y-12">
+      <div className="max-w-6xl mx-auto flex flex-col items-center justify-center space-y-12 my-8">
         <h1 className="text-4xl font-bold">The Shoppies</h1>
 
         {/* Search Input */}
-        <div className="flex flex-row items-center justify-center gap-2 rounded-md p-4 bg-gray-100 w-1/2">
+        <div className="flex flex-row items-center justify-center gap-2 rounded-md p-4 bg-gray-100 w-4/5 md:w-1/2">
           <input
             type="text"
             value={searchTerm}
@@ -61,7 +61,7 @@ function App() {
         </section>
 
         {/* All Movies Section */}
-        <section className="flex flex-col items-start justify-start space-y-4">
+        <section className="flex flex-col items-start justify-start space-y-4 px-8">
           <h2 className="text-2xl font-bold">All Movies</h2>
           {status === "pending" && hasSearched && <p>Loading...</p>}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
